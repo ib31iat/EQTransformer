@@ -1710,11 +1710,11 @@ class DataGeneratorPrediction(keras.utils.Sequence):
             if self.norm_mode:
                 data = self.normalize(data, self.norm_mode)
 
-            X[i, :, :] = data
+            X[i, :, :] = data[:,0].reshape(data.shape[0],1)
 
         fl.close()
 
-        return X
+        return X.reshape(X.shape[0],X.shape[1],1)
 
 
 

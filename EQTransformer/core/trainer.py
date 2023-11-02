@@ -322,7 +322,7 @@ def trainer(input_hdf5=None,
                                           workers=multiprocessing.cpu_count(),
                                           callbacks=callbacks,
                                           epochs=args['epochs'])
-                                        #   class_weight={0: 0.11, 1: 0.89})
+                                        #   class_weight={0: 0.11, 1: 0.879, 2: 0.1})
 
         elif args['mode'] == 'preload':
             X, y1, y2, y3 = data_reader(list_IDs=training+validation,
@@ -461,7 +461,7 @@ def _split(args, save_dir):
     validation =  ev_list[int(args['train_valid_test_split'][0]*len(ev_list)):
                             int(args['train_valid_test_split'][0]*len(ev_list) + args['train_valid_test_split'][1]*len(ev_list))]
     test =  ev_list[ int(args['train_valid_test_split'][0]*len(ev_list) + args['train_valid_test_split'][1]*len(ev_list)):]
-    # np.save(save_dir+'/test', test)
+    np.save(save_dir+'/test', test)
     return training, validation
 
 
