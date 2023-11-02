@@ -19,7 +19,7 @@
 ## How we got it running
 - Create a conda env: `conda create -n eqt python=3.7`
 - Install requirements: `pip install -r requirements.txt`
-- Uncomment the `class_weight` in the fit function as there seems to be a bug in tensorflow and with older versions there is also an error: class `0` and `1` are specified but the `class_weight` expects names for the respective classes which are named `detector`, `picker_P` and `picker_S`
+- Uncomment the `class_weight` in the fit function as there seems to be a bug in tensorflow and with older versions there is also an error: class `0` and `1` are specified but the `class_weight` expects names for the respective classes which are named `detector`, `picker_P` and `picker_S` and additionally there are multiple outputs and tensorflow's loss function do not support class_weights for multi output models
 
 ## Description
 
